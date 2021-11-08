@@ -80,7 +80,7 @@ npm install
 npm run start
 ```
 
-Navigating to the browser page will allow you to view the webapp.
+Navigating to the browser page will allow you to view the web app.
 ```
 http://localhost:3000/
 ```
@@ -97,4 +97,11 @@ python -m unittest -v test_main.py
 
 For the backend, I used FastAPI because I have previously used it at Hackathons for making small/fast projects. The documentation page provided by FastAPI also makes it easy to debug with the reloading option enabled. For larger projects, I would favor using an actual database (PostgreSQL) instead of parsing the csv every query. I introduced server side filtering/sorting/paginating because it would reduce the load for client side processing. In terms of testing, I prefer parameterized tests because it reduces complexity.
 
-For the frontend, I used React and Redux because I am most familiar with it. Redux isn't necessary for a small project but I prefer using it because it makes state much more manageable and it allows you to scale your application better for future development. 
+For the frontend, I used React and Redux because I am most familiar with it. Redux isn't necessary for a small project but I prefer using it because it makes state much more manageable and it allows you to scale your application better for future development.
+
+API Contract
+```
+http://localhost:8000/api/rushing/?page_num={}&page_size={}&filter_name={}&sort_field={}&sort_order={}
+```
+
+
