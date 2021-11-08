@@ -53,5 +53,48 @@ We will evaluate you on your ability to solve the problem defined in the require
 ### Help
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
-### Installation and running this solution
-... TODO
+# Installation and running this solution
+
+This full stack web app was built using Python 3 (FastAPI) and Javascript (React Redux).
+
+![Screen Shot 2021-11-07 at 6 09 11 PM](https://user-images.githubusercontent.com/26910018/140673557-16ad2ff1-2823-4613-b412-8be5736fb8e8.png)
+
+## Server Setup
+
+```
+cd server
+pip install -r requirements.txt
+python main.py
+```
+
+Navigating to the browser page below will allow you to view the API contract.
+```
+http://localhost:8000/docs
+```
+
+## Client Setup
+
+```
+cd client
+npm install
+npm run start
+```
+
+Navigating to the browser page will allow you to view the webapp.
+```
+http://localhost:3000/
+```
+
+## Testing for Server
+
+From the root directory:
+```
+cd server
+python -m unittest -v test_main.py
+```
+
+## Design Considerations
+
+For the backend, I used FastAPI because I have previously used it at Hackathons for making small/fast projects. The documentation page provided by FastAPI also makes it easy to debug with the reloading option enabled. For larger projects, I would favor using an actual database (PostgreSQL) instead of parsing the csv every query. I introduced server side filtering/sorting/paginating because it would reduce the load for client side processing. In terms of testing, I prefer parameterized tests because it reduces complexity.
+
+For the frontend, I used React and Redux because I am most familiar with it. Redux isn't necessary for a small project but I prefer using it because it makes state much more manageable and it allows you to scale your application better for future development. 
